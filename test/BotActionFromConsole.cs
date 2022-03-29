@@ -62,5 +62,10 @@ namespace test
             string timeString = time.ToString($"Местное время {time:t}");
             Console.WriteLine(timeString);
         }
+
+        void IRepo.Bye()
+        {
+            Console.WriteLine("Наберёшь");
+        }
     }
 }

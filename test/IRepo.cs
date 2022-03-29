@@ -7,5 +7,6 @@
         void Aphorisms();
         void MyName();
         void TimeNow();
+        void Bye();
     }
 }

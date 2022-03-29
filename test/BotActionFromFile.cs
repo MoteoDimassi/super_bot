@@ -4,17 +4,20 @@
     {
         void IRepo.Aphorisms()
         {
-            Console.WriteLine(File.ReadAllText(@"C:\Users\d.djioev\Desktop\test\test\AppData\Aphorisms.txt"));
+            string str = File.ReadAllText(@"..\..\..\AppData\Aphorisms.txt");
+            Console.WriteLine(Answer(str));
         }
 
         void IRepo.Hello()
         {
-            Console.WriteLine(File.ReadAllText(@"C:\Users\d.djioev\Desktop\test\test\AppData\Hello.txt"));
+            string str = File.ReadAllText(@"..\..\..\AppData\Hello.txt");
+            Console.WriteLine(Answer(str));
         }
 
         void IRepo.Joke()
         {
-            Console.WriteLine(File.ReadAllText(@"C:\Users\d.djioev\Desktop\test\test\AppData\Jokes.txt"));
+            string str = File.ReadAllText(@"..\..\..\AppData\Jokes.txt");
+            Console.WriteLine(Answer(str));
         }
 
         void IRepo.MyName()
@@ -24,7 +27,29 @@
 
         void IRepo.TimeNow()
         {
-            Console.WriteLine(File.ReadAllText(@"C:\Users\d.djioev\Desktop\test\test\AppData\TimeNow.txt"));
+            string str = File.ReadAllText(@"..\..\..\AppData\TimeNow.txt");
+            Console.WriteLine(Answer(str));
+        }
+
+        string Answer(string str)
+        {
+            List<int> list = new List<int>();
+            for (int i = 0; i < str.Length - 4; i++)
+            {
+                if (str.Substring(i, 3) == ">>>")
+                {
+                    list.Add(i + 3);
+                }
+            }
+            Random rand = new Random();
+            int index = rand.Next(0, list.Count);
+            return str.Substring(list[index]+1, list[index + 1] - list[index] - 4);
+        }
+
+        void IRepo.Bye()
+        {
+            string str = File.ReadAllText(@"..\..\..\AppData\Bye.txt");
+            Console.WriteLine(Answer(str)); ;
         }
     }
 }

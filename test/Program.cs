@@ -52,7 +52,7 @@ static class Program
             str = Console.ReadLine();
         }
         flag = false;
-        Console.WriteLine("До новых встреч, дорогой собеседник!");
+        repo.Bye();
     }
     private static void StartReading(object object1)
     {
