@@ -42,7 +42,7 @@
                 }
             }
             Random rand = new Random();
-            int index = rand.Next(0, list.Count);
+            int index = rand.Next(0, list.Count-1);
             return str.Substring(list[index]+1, list[index + 1] - list[index] - 4);
         }
 
